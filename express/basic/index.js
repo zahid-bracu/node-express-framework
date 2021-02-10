@@ -49,7 +49,8 @@ app.get('/api/data',(req,res)=>{
 //JSON fetch single data : dynamic
 app.get('/api/data/:id',(req,res)=>{
     var flag=data.some(key => key.id==req.params.id);
-    
+    console.log(req.query);
+    // http://localhost:8000/api/data/3?sort=asc
     if(flag){
         var item=data.filter(key => key.id==req.params.id);
         res.send(item)
