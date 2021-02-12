@@ -92,6 +92,6 @@ client.connect(err => {
 });
 
 // app listen
-app.listen(3090,()=>{
-	console.log("Listening to port at 6000 ");
+app.listen(3000,()=>{
+	console.log("Listening to port at 3000 ");
 })

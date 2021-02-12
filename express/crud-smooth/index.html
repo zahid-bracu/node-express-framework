@@ -18,7 +18,7 @@
     <script>
 
         // show data
-        fetch('http://localhost:3090/info')
+        fetch('http://localhost:3000/info')
                 .then(response => response.json()) //all datas are got
                 .then(json => {
                     console.log(json[0].id)
@@ -85,7 +85,7 @@
                 // deleting product
                 function deleteProduct(event,id){
                     console.log(event.target);
-                    fetch(`http://localhost:3090/delete/${id}`,{
+                    fetch(`http://localhost:3000/delete/${id}`,{
                         method: 'DELETE'
                     }) 
                     .then(res=>res.json())
