@@ -1,9 +1,23 @@
 const express=require('express');
 const app=express();
 const {data}=require('./data')
+const path=require('path');
+
+const PORT = process.env.PORT || 5000;
+
+
+// default page setup
+app.use(express.static(path.join(__dirname,'public')))
+
+
+//app get file send
+app.get('/file',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public','index.html'))
+     
+})
 
 // app get
-app.get('/',(req,res)=>{
+app.get('/page',(req,res)=>{
     console.log("Hello")
     res.send('Hello From the other Side')
 })
@@ -61,6 +75,6 @@ app.get('/api/data/:id',(req,res)=>{
 
 
 // app listen
-app.listen(8000,()=>{
-    console.log("Testing 8000");
+app.listen(PORT,()=>{
+    console.log("Testing 5000");
 })

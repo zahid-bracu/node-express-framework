@@ -1,13 +1,17 @@
-const fs=require('fs');
-const http=require('http');
 
-const server=http.createServer();
+const fs=require('fs'); //importing fs module
+const http=require('http'); //importing http server creation module
+
+const server=http.createServer(); // creating http server
 
 
-server.on('request',(req,res)=>{
+//server pages are creating
+server.on('request',(req,res)=>{ 
    
+    // creating streaming file 
      const rstream=fs.createReadStream('file.txt');
 
+     
      rstream.on("data",(chunkdata)=>{
          res.write(chunkdata);
      })
