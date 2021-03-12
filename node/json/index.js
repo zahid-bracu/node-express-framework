@@ -3,7 +3,8 @@ const fs=require('fs');
 var bioData={
     name:"Zahid",
     occupation:"Software Developer",
-    id:"facebook/zahidur"
+    id:"facebook/zahidur",
+    linkedin:"https://www.linkedin.com/in/md-zahidur-rahman-54b3ba17b/"
 }
 
 

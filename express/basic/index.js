@@ -1,18 +1,18 @@
-const express=require('express');
-const app=express();
+const express=require('express'); //import express
+const app=express(); 
 const {data}=require('./data')
 const path=require('path');
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 9000;
 
 
 // default page setup
-app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname,'public'))) //no need to import the file name
 
 
 //app get file send
-app.get('/file',(req,res)=>{
-    res.sendFile(path.join(__dirname,'public','index.html'))
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public','index.html')) // file name and directory name import must
      
 })
 
@@ -33,8 +33,9 @@ app.get('/about',(req,res)=>{
 
 // Write
 app.get('/write',(req,res)=>{
-    console.log("Write Page");
+     
     res.write("<h1>A page for Write</h1>");
+    res.write("<h1>The Second Line</h1>");
     res.send();
 })
 
@@ -62,8 +63,8 @@ app.get('/api/data',(req,res)=>{
 
 //JSON fetch single data : dynamic
 app.get('/api/data/:id',(req,res)=>{
-    var flag=data.some(key => key.id==req.params.id);
-    console.log(req.query);
+    var flag=data.some(key => key.id==req.params.id); // filtering data from data file
+    console.log(req.query); // checking the query
     // http://localhost:8000/api/data/3?sort=asc
     if(flag){
         var item=data.filter(key => key.id==req.params.id);

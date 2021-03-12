@@ -15,7 +15,7 @@ fs.appendFileSync('file.txt','A line has been added.');
 const buffer_read=fs.readFileSync('file.txt');
 //convert the binary value into string or text
 const original_text=buffer_read.toString();
-
+console.log(original_text);
 
 // create file again
 fs.writeFileSync('newFile.txt','A line is written.');
