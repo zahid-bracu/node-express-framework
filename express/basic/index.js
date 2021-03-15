@@ -33,7 +33,6 @@ app.get('/about',(req,res)=>{
 
 // Write
 app.get('/write',(req,res)=>{
-     
     res.write("<h1>A page for Write</h1>");
     res.write("<h1>The Second Line</h1>");
     res.send();
