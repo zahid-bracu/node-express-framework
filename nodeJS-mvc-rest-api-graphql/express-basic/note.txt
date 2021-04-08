@@ -1,0 +1,56 @@
+
+//import & export route file
+admin.js
+module.exports=Router; // exporting from admin.js file
+
+app.js 
+const AdminRoute=require('./route/admin.js'); // importing from admin.js file
+
+
+//multiple item export and use
+
+Admin.js
+exports.data=data;
+exports.router=router;
+
+App.js
+const AdminRoute=require('./route/admin.js');
+AdminRoute.data
+AdminRoute.router
+
+//using the route files with header
+app.js
+app.use('/admin',AdminRoute);
+
+
+//setting a file where path is not found yet
+app.js
+app.use((req,res)=>{
+    res.send("Path not Found");
+})
+
+
+
+
+//settings up page or add page
+res.status(404).sendFile(path.join(__dirname,'../','views','404-page.html'));
+
+
+
+//setting up root folder
+path.js
+const path=require('path');
+module.exports=path.dirname(process.mainModule.filename);
+
+app.js
+const root=require('./util/path');
+res.sendFile(path.join(root,'views', '404-page.html'));
+
+
+
+
+//serving page statically
+app.use(express.static('public'))
+
+
+
