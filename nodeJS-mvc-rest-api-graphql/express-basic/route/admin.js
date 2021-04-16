@@ -12,18 +12,19 @@ router.get('/',(req,res,next)=>{
 
 
 router.get('/addProduct',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'../','public','views','add-product.html'));
+    res.sendFile(path.join(__dirname,'../','views','add-product.html'));
 })
 
 router.post('/addProduct',(req,res,next)=>{
      
     data.push({title:req.body.title});
-    res.redirect('/admin/dataSaved')
+    res.redirect('/shop')
 })
 
 
 router.get('/dataSaved',(req,res,next)=>{
-     res.send('<h1>Data is saved</h1>')
+    console.log(data);
+    res.send('<h1>Data is saved</h1>')
 })
 
  

@@ -1,0 +1,32 @@
+**************************App.js***************************
+
+1. body-parser
+2. body-parser url encoded
+3. body-parser json
+
+4. express
+5. route-files
+6. path
+7. root path file setup using dirname & path
+8. dot env
+
+1. static file serve using app-use
+2. route file serve using app-use
+
+
+***********************Route Folder*************************
+
+1. express
+2. router
+3. path & root
+
+4. router : get post put delete
+5. status send
+6. send file 
+7. redirect send
+8. rs send
+
+
+9. module.exports = name
+10. export.name = name
+11. module.exports = {nameOne,nameTwo}
