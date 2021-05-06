@@ -2,7 +2,7 @@ const express = require('express');
 const router=express.Router();
 const {data}=require('./data')
 const path=require('path');
-const {getPage} =require('./controller');
+const {getPage,helloPage,aboutPage,writePage} =require('./controller');
 
 // default page setup
 router.use(express.static(path.join(__dirname,'public'))) //no need to import the file name
@@ -12,26 +12,16 @@ router.use(express.static(path.join(__dirname,'public'))) //no need to import th
 router.get('/',getPage);
 
 // router get
-router.get('/page',(req,res)=>{
-    console.log("Hello")
-    res.send('Hello From the other Side')
-})
+router.get('/page',helloPage);
 
 
 // routing
-router.get('/about',(req,res)=>{
-    console.log("About Page");
-    res.send("Hello from the About Page")
-})
+router.get('/about', aboutPage)
 
 
 
 // Write
-router.get('/write',(req,res)=>{
-    res.write("<h1>A page for Write</h1>");
-    res.write("<h1>The Second Line</h1>");
-    res.send();
-})
+router.get('/write',writePage);
 
 
 //  JSON
