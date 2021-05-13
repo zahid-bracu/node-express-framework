@@ -5,18 +5,13 @@ const server=http.createServer((req,res)=>{
             res.setHeader('Content-Type','text/html');
             res.write('<html>');
             res.write('<body>');
-            res.write('<h1>The Default Page</h1>');
+            res.write('<form action="/message" method="POST"><input type="text" name="message"><button type="submit">Submit</button></form>'); 
             res.write('</body>');
             res.write('</html>');
             return res.end();
-        }else if(req.url=="/cool"){
-
-            res.setHeader('Content-Type','text/html');
-            res.write('<html>');
-            res.write('<body>');
-            res.write('<h1>The Cool Page</h1>');
-            res.write('</body>');
-            res.write('</html>');
+        }
+        if(req.url=="/message" ){
+            res.setHeader('Location','/');
             return res.end();
         }
 
