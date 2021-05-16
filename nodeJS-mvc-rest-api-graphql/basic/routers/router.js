@@ -15,11 +15,9 @@ const requestHanlder =(req,res)=>{
         res.setHeader('Content-Type','text/html'); //sending header & it's value
         
         //HTML files is being written for sending as response
-        res.write('<html>');
-        res.write('<body>');
+        
         res.write('<form action="/message" method="POST"><input type="text" name="message"><button type="submit">Submit</button></form>'); 
-        res.write('</body>');
-        res.write('</html>');
+      
 
 
         // response is being sent
@@ -53,23 +51,15 @@ const requestHanlder =(req,res)=>{
             });
         })  
     }else if(req.url==='/submitted'){
-        res.setHeader('Content-Type','text/html');
-        res.write('<html>');
-        res.write('<body>');
+        res.setHeader('Content-Type','text/html'); 
         res.write('<h1>The form is submitted</h1>');
-        res.write('</body>');
-        res.write('</html>');
         return res.end();
     }
     
 
     // response description
     res.setHeader('Content-Type','text/html');
-    res.write('<html>');
-    res.write('<body>');
     res.write('<h1>This is response Page</h1>');
-    res.write('</body>');
-    res.write('</html>');
     res.end();
 
 
