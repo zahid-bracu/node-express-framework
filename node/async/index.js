@@ -23,6 +23,11 @@ fs.unlink('new_file',(err)=>{
     console.log("the file has been deleted");
 })
 
+// setting new name
+fs.rename('file.txt','new_file_name.txt',(err)=>{
+    console.log("New name set")
+})
+
 
 // file is being read
 fs.readFile('file.txt','utf-8',(err,data)=>{
@@ -31,10 +36,6 @@ fs.readFile('file.txt','utf-8',(err,data)=>{
 console.log("Printing")
 
 
-// setting new name
-fs.rename('file.txt','new_file_name.txt',(err)=>{
-    console.log("New name set")
-})
 
 // add some text to file
 fs.appendFile('new_file_name.txt','Here is new line',(err)=>{
