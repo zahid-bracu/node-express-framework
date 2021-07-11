@@ -4,8 +4,23 @@ const fs=require('fs');
 
 // creating new folder
 fs.mkdir('new_folder',(err)=>{
-    console.log("New Folder Has been created")
+    if(err){
+        console.log(err)
+    }else{
+        console.log("New Folder Has been created")
+    }
 })
+
+// rename a folder
+fs.rename('new_folder','new_folder_name',(err)=>{
+    if(err){
+        console.log(err)
+    }else{
+        console.log("New Folder Has been created")
+    }
+})
+
+
 
 //delete a folder
 fs.rmdir('new_folder',(err)=>{
@@ -31,7 +46,11 @@ fs.rename('file.txt','new_file_name.txt',(err)=>{
 
 // file is being read
 fs.readFile('file.txt','utf-8',(err,data)=>{
-    console.log(data);
+    if(err){
+        console.log(err);
+    }else{
+        console.log(data);
+    }
 })
 console.log("Printing")
 

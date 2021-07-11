@@ -7,7 +7,6 @@ const server=http.createServer((req,res)=>{
         fs.readFile('userapi.json','utf-8',(err,data)=>{
             const objectData=JSON.parse(data) //parsing
             var name=objectData[4].name; //getting a name from json array
-            console.log(name)
             res.end(name)//sending it to page
         })
     }
