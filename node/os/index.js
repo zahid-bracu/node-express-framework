@@ -1,7 +1,7 @@
 const os=require('os');
 
 
-// windows bit
+// windows bit - or which architecture we are using
 const bits=os.arch()
 console.log("Windows Bit : "+bits);
 
@@ -26,9 +26,9 @@ console.log("OS Type : "+type);
 
 
 // windows free memory
-let freeMemory=os.freemem();
-freeMemory=freeMemory/1024/1024/1024;
-console.log("Free Memory : "+freeMemory);
+let freeMemory=os.freemem(); //result will be in bytes
+freeMemory=freeMemory/1024/1024/1024; // this will convert into Gb
+console.log("Free Memory : "+freeMemory); 
 
 
 //total memory
