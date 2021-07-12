@@ -2,7 +2,7 @@ const express = require('express');
 const router=express.Router();
 const {data}=require('./data')
 const path=require('path');
-const {getPage,helloPage,aboutPage,writePage} =require('./controller');
+const {getPage,helloPage,aboutPage,writePage,sendJson} =require('./controller');
 
 // default page setup
 router.use(express.static(path.join(__dirname,'public'))) //no need to import the file name
@@ -25,19 +25,7 @@ router.get('/write',writePage);
 
 
 //  JSON
-router.get('/json',(req,res)=>{
-    console.log("JSON Page");
-    res.json([
-        {
-            id:15101122,
-            name:"zahid"
-        },
-        {
-            id:'127(B)',
-            name:"Rahman"
-        }
-    ])
-})
+router.get('/json',sendJson);
 
 //JSON fetch-data
 router.get('/api/data',(req,res)=>{
