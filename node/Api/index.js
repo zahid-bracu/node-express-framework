@@ -12,6 +12,7 @@ const server=http.createServer((req,res)=>{
     }
 })
 
-server.listen(3005,'127.0.0.1',()=>{
-    console.log("Port is listening 3005")
+server.listen(3005,'127.0.0.1',(err)=>{
+    console.log("Error : "+err);
+    console.log("Port is listening 3005");
 })
