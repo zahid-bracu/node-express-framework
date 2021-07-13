@@ -26,6 +26,22 @@ const writePage=(req,res)=>{
     res.status(203).send();
 }
 
+const showName=(req,res)=>{
+    res.status(300).send(req.params.name);
+}
+
+const dynamicDataShow=(req,res)=>{
+    var flag=data.some(key => key.id==req.params.id); // filtering data from data file to check if data is existed or not
+    console.log(req.query); // checking the query
+    // http://localhost:9000/api/data/3?sort=asc
+    if(flag){
+        var item=data.filter(key => key.id==req.params.id);
+        res.send(item)
+    }else{
+        res.send(`Error ${req.params.id} not found`)
+    }
+}
+
 
 // send Json
 const sendJson=(req,res)=>{
@@ -41,4 +57,4 @@ const sendJson=(req,res)=>{
         }
     ])
 }
-module.exports={getPage,helloPage,aboutPage,writePage,sendJson};
+module.exports={getPage,helloPage,aboutPage,writePage,sendJson,showName,dynamicDataShow};
