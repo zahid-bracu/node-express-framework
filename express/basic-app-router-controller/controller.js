@@ -30,9 +30,11 @@ const showName=(req,res)=>{
     res.status(300).send(req.params.name);
 }
 
+
+// Send Json Data through Response Send to Page using Filter & Some
 const dynamicDataShow=(req,res)=>{
-    var flag=data.some(key => key.id==req.params.id); // filtering data from data file to check if data is existed or not
-    console.log(req.query); // checking the query
+    var flag=data.some(key => key.id==req.params.id);
+    console.log(req.query);
     // http://localhost:9000/api/data/3?sort=asc
     if(flag){
         var item=data.filter(key => key.id==req.params.id);
